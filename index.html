@@ -4,168 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <style>
-        body {
-            background-color: lightblue;
-            /* Change background to light blue */
-            color: black;
-            /* Change text color to black */
-            margin: 0;
-            /* Remove default margin */
-            display: flex;
-            /* Use flexbox for layout */
-            flex-direction: column;
-            /* Stack elements vertically */
-            align-items: center;
-            /* Center elements horizontally */
-            text-align: center;
-            /* Center text */
-        }
-
-        h1,
-        h2 {
-            color: red;
-            /* Red for headings */
-            margin: 10px 0;
-            /* Add some margin */
-        }
-
-        p {
-            color: black;
-            /* Light yellow for paragraph text */
-            max-width: 600px;
-            /* Limit paragraph width for better readability */
-            margin: 0 20px;
-            /* Add some margin on sides */
-        }
-
-        .grid-container {
-            display: grid;
-            /* Use grid layout */
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            /* Responsive columns */
-            gap: 10px;
-            /* Space between grid items */
-            padding: 20px;
-            /* Add padding around grid */
-            width: 100%;
-            /* Full width of the container */
-            max-width: 1200px;
-            /* Maximum width for larger screens */
-        }
-
-        .grid-item {
-            overflow: hidden;
-            /* Prevent overflow for scaling */
-            transition: transform 0.3s;
-            /* Smooth scaling transition */
-        }
-
-        .grid-item img {
-            width: 100%;
-            /* Scale image to 100% of the container width */
-            height: auto;
-            /* Maintain aspect ratio */
-        }
-
-        .grid-item:hover {
-            transform: scale(1.05);
-            /* Scale up slightly on hover */
-        }
-
-        .whatsapp-button {
-            background-color: #25D366;
-            /* WhatsApp green */
-            color: white;
-            /* White text */
-            border: none;
-            /* No border */
-            padding: 10px 20px;
-            /* Padding for the button */
-            font-size: 16px;
-            /* Font size */
-            cursor: pointer;
-            /* Pointer cursor on hover */
-            border-radius: 5px;
-            /* Rounded corners */
-            margin: 20px 0;
-            /* Margin for spacing */
-        }
-
-        .whatsapp-button:hover {
-            background-color: #128C7E;
-            /* Darker green on hover */
-        }
-    </style>
+    <title>Home | Nelpo Business Enterprise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <img src="https://avatars.githubusercontent.com/u/251232307?s=48&v=4" alt="Logo">
-    <h1>Nelpo Business Enterprise</h1>
-    <p>Welcome to Nelpo Business Enterprise where we bring your dreams to life with beautiful carpentry made by
-        professionals with years of experience in the industry. Just take a look at some of our proud work</p>
-<h2>Vison</h2>
-<p>Crafting quality, building trust.</p>
-<h2>Misson</h2>
-<p>Delivering expert carpentry solutions with precision and passion, exceeding our customers' expectations.</p>
-    <h2>Some Of Our Work</h2>
-    <div class="grid-container">
-        <div class="grid-item">
-            <img src="imgs/1.jpeg" alt="Image 1">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="https://avatars.githubusercontent.com/u/251232307?s=48&v=4" alt="Nelpo Logo">
+            </a>
         </div>
-        <div class="grid-item">
-            <img src="imgs/2.jpeg" alt="Image 2">
-        </div>
-        <div class="grid-item">
-            <img src="imgs/5.jpeg" alt="Image 3">
-        </div>
-        <div class="grid-item">
-            <img src="imgs/4.jpeg" alt="Image 4">
-        </div>
-        <div class="grid-item">
-            <img src="imgs/6.jpeg" alt="Image 4">
-        </div>
-        <div class="grid-item">
-            <img src="imgs/7.jpeg" alt="Image 4">
-        </div>
-        <div class="grid-item">
-            <img src="imgs/10.jpeg" alt="Image 4">
-        </div>
-        <div class="grid-item">
-            <img src="imgs/9.jpeg" alt="Image 4">
-        </div>
-        <div class="grid-item">
-            <img src="imgs/11.jpeg" alt="Image 4">
-        </div>
-        <div class="grid-item">
-            <img src="imgs/12.jpeg" alt="Image 4">
-        </div>
-        <div class="grid-item">
-            <img src="imgs/13.jpeg" alt="Image 4">
-        </div>
-        <div class="grid-item">
-            <img src="imgs/14.jpeg" alt="Image 4">
-        </div>
-        <div class="grid-item">
-            <img src="imgs/15.jpeg" alt="Image 4">
-        </div>
-        <div class="grid-item">
-            <img src="imgs/16.jpeg" alt="Image 4">
-        </div>
-        <div class="grid-item">
-            <img src="imgs/17.jpeg" alt="Image 4">
-        </div>
-    </div>
+        <div class="nav-links">
+            <a href="pages/gallery.html">Gallery</a>
+            <a href="pages/contact.html" title="Contact Us" class="contact-icon">
+    <!-- Envelope SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 5.001-8-5.001V6h16zm-16 12V9.489l7.445 4.653c.208.13.46.13.668 0L20 9.489V18H4z"/>
+    </svg>
+</a>
 
-    <h3>Where To Find Us</h3>
-    Unit 14R Industrial Park <br> 213 La Basse Rd <br> Germiston
+        </div>
+    </nav>
 
-    <h3>Contact us</h3>
-    <p>Call or Whatsapp:<br>010 238 0544 (call only) <br> 064 519 0181 <br> 067 039 0857 (emergency line) <br><br> Email us @ <br> NelpoGroup33@gmail.com </p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Nelpo Business Enterprise</h1>
+        <p>Bringing your dreams to life with professional carpentry. Crafting quality, building trust.</p>
+        <a href="pages/gallery.html" class="view-gallery-link">View Full Gallery</a>
+    </section>
 
-    <!-- WhatsApp Button -->
-    <button class="whatsapp-button" onclick="window.open('https://wa.me/0645190181', '_blank')">Chat on WhatsApp</button>
+    <!-- Vision & Mission -->
+    <section class="info-section">
+        <div class="info-card">
+            <h2>Our Vision</h2>
+            <p>Crafting quality, building trust.</p>
+        </div>
+        <div class="info-card">
+            <h2>Our Mission</h2>
+            <p>Delivering expert carpentry solutions with precision and passion, exceeding our customers' expectations.</p>
+        </div>
+    </section>
+
+        <a href="https://wa.me/27645190181" target="_blank" class="social-link">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="social-icon">
+    </a>
 </body>
 
 </html>
