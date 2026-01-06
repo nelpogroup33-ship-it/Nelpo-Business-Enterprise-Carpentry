@@ -52,9 +52,6 @@ p {
 /* =========================
    NAVIGATION BAR
    ========================= */
-/* =========================
-   NAVIGATION BAR FIXED HEIGHT
-   ========================= */
 .navbar {
     width: 100%;
     background-color: #ffffff;
@@ -62,8 +59,7 @@ p {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 0 20px;           /* remove top/bottom padding */
-    height: 70px;              /* fixed height to match other pages */
+    padding: 12px 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -71,18 +67,17 @@ p {
 }
 
 .nav-logo img {
-    height: 50px;              /* keeps logo consistent */
+    height: 50px;
     border-radius: 8px;
 }
 
-/* Ensure nav links are vertically centered within navbar */
+/* Navigation links container */
 .nav-links {
     display: flex;
-    align-items: center;       /* vertical alignment */
+    align-items: center;
     flex-wrap: wrap;
     gap: 20px;
 }
-
 
 /* Base link styles */
 .nav-links a {
@@ -390,7 +385,7 @@ p {
 }
 
 .mission-values .card h2 {
- background-color: #bfc7ce; /* soft neutral grey */
+    background-color: #bfc7ce; /* soft neutral grey */
     color: #292828;
     margin: -25px -25px 20px; /* stretch header to card edges */
     padding: 14px 16px;
