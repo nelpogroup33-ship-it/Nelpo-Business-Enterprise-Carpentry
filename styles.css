@@ -1,46 +1,66 @@
-/* Base Layout */
+/* =========================
+   RESET & GLOBAL SETTINGS
+   ========================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
 body {
-    background-color: #cef0fd; /* soft off-white */
-    color: #333; /* dark gray for easier reading */
+    background-color: #cef0fd;
+    color: #333;
     margin: 0;
     padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     text-align: center;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================
+   HEADINGS & TEXT
+   ========================= */
 h1 {
-    color: #2c3e50; /* dark slate */
+    color: #2c3e50;
     margin: 30px 0 10px;
     font-size: 2.2rem;
-    /*cheese*/
 }
 
 h2 {
-    color: #34495e; /* softer dark blue-gray */
+    color: #34495e;
     margin: 25px 0 10px;
     font-size: 1.6rem;
 }
 
 p {
     max-width: 650px;
-    margin: 0 20px 20px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
     font-size: 1rem;
 }
 
-/* Navigation Bar */
+/* =========================
+   NAVIGATION BAR
+   ========================= */
 .navbar {
     width: 100%;
     background-color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 40px;
+    flex-wrap: wrap;
+    padding: 12px 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
     position: sticky;
     top: 0;
     z-index: 999;
@@ -51,19 +71,26 @@ p {
     border-radius: 8px;
 }
 
-/* Navigation Links Hover Effect: Loop Around Text */
+/* Navigation links container */
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Base link styles */
 .nav-links a {
-    margin-left: 25px;
     text-decoration: none;
     color: #2c3e50;
     font-weight: 600;
     font-size: 16px;
     position: relative;
-    padding: 4px 0; /* space for animated border */
+    padding: 4px 0;
     transition: color 0.3s ease;
 }
 
-/* Border animation using ::before and ::after */
+/* Animated border effect */
 .nav-links a::before,
 .nav-links a::after {
     content: "";
@@ -84,28 +111,7 @@ p {
     right: 0;
 }
 
-/* Vertical lines using inner pseudo-elements */
-.nav-links a span::before,
-.nav-links a span::after {
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 0;
-    background-color: #e74c3c;
-    transition: all 0.3s ease;
-}
-
-.nav-links a span::before {
-    top: 0;
-    left: 0;
-}
-
-.nav-links a span::after {
-    bottom: 0;
-    right: 0;
-}
-
-/* Wrap link text in a span for vertical lines */
+/* Hover state */
 .nav-links a:hover {
     color: #e74c3c;
 }
@@ -115,21 +121,77 @@ p {
     width: 100%;
 }
 
-.nav-links a:hover span::before,
-.nav-links a:hover span::after {
-    height: 100%;
+/* =========================
+   HERO / INTRO SECTION
+   ========================= */
+.hero {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+}
+
+.hero p {
+    font-size: 1.05rem;
+}
+
+/* =========================
+   INFO CARDS
+   ========================= */
+.info-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.info-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   INFO CARD HEADER BAND
+   ========================= */
+.info-card h2 {
+    background-color: #bfc7ce; /* soft neutral grey */
+    color: #292828;
+    margin: -25px -25px 20px; /* stretch header to card edges */
+    padding: 14px 16px;
+    border-radius: 10px 10px 0 0;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Ensure icons inherit white color */
+.info-card h2 svg {
+    fill: currentColor;
 }
 
 
+/* =========================
+   GALLERY GRID
+   ========================= */
+.gallery-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
-/* Gallery Grid */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px;
     margin-bottom: 40px;
 }
 
@@ -137,13 +199,13 @@ p {
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .grid-item img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
 }
 
 .grid-item:hover {
@@ -151,7 +213,24 @@ p {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Buttons & Links */
+/* =========================
+   BUTTONS & LINKS
+   ========================= */
+.view-gallery-link {
+    font-weight: bold;
+    text-decoration: none;
+    color: #2c3e50;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+    display: inline-block;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.view-gallery-link:hover {
+    color: #e74c3c;
+    border-bottom: 2px solid #e74c3c;
+}
+
 .whatsapp-button {
     background-color: #25D366;
     color: white;
@@ -169,30 +248,39 @@ p {
     transform: scale(1.05);
 }
 
-.view-gallery-link {
-    font-weight: bold;
-    text-decoration: none;
-    color: #2c3e50;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 2px;
-    margin-bottom: 20px;
+/* =========================
+   SOCIAL ICONS
+   ========================= */
+.social-buttons {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
     display: inline-block;
-    transition: color 0.3s, border-bottom 0.3s;
+    transition: transform 0.2s;
 }
 
-.view-gallery-link:hover {
-    color: #e74c3c;
-    border-bottom: 2px solid #e74c3c;
+.social-link:hover {
+    transform: scale(1.1);
 }
 
-/* Lightbox Overlay */
-#lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
+.social-icon {
     width: 100%;
     height: 100%;
-    background: rgba(44, 62, 80, 0.95); /* dark semi-transparent */
+}
+
+/* =========================
+   LIGHTBOX
+   ========================= */
+#lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(44, 62, 80, 0.95);
     display: none;
     align-items: center;
     justify-content: center;
@@ -210,40 +298,46 @@ p {
 #lightbox .close {
     position: absolute;
     top: 20px;
-    right: 80px;
+    right: 30px;
     color: white;
     font-size: 40px;
     cursor: pointer;
     user-select: none;
-    transition: color 0.2s;
 }
 
-#lightbox .close:hover {
-    color: #e74c3c;
+/* =========================
+   RESPONSIVE BREAKPOINTS
+   ========================= */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .navbar {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
 }
 
-.social-buttons {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
+@media (max-width: 480px) {
+    .nav-logo img {
+        height: 40px;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
 }
-
-.social-link {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    transition: transform 0.2s;
-}
-
-.social-link:hover {
-    transform: scale(1.1);
-}
-
-.social-icon {
-    width: 100%;
-    height: 100%;
-    fill: currentColor;
-}
-
-
-
